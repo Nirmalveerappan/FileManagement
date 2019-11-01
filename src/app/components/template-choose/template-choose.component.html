@@ -1,0 +1,19 @@
+<div class="csv-file-chooser-section">
+  <div class="text-center">
+    <h3>Customer Statement Processing</h3>
+    <label class="fileContainer no-gutters btn btn-success mr-2 mb-0">
+      Choose CSV document
+      <input class="pt-2" type="file" #fileImportInput name="File Upload"
+             (change)="fileChangeListener($event)"
+             accept=".csv"/>
+    </label>
+    <button class="btn btn-danger" (click)="fileReset()">Reset</button>
+    <div class="pt-2">
+      <h5 *ngIf="successMsg" class="text-success">{{successMsg}}</h5>
+      <h5 *ngIf="errorMsg" class="text-danger">{{errorMsg}}</h5>
+    </div>
+
+  </div>
+  <app-display-results *ngIf="csvRecords.length > 0" [csvRecords]="csvRecords"
+                       [fileName]="fileName"></app-display-results>
+</div>
