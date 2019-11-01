@@ -5,6 +5,24 @@ import { Component, Input } from '@angular/core';
 import { CSVRecord } from '../../models/record.model';
 import { TemplateChooseComponent } from './template-choose.component';
 
+const csvRecordsMock = [{
+  firstName: 'rec1',
+  lastName: 'name',
+  issueCount: '7',
+  dateOfBirth: '08/12/1989'
+}
+];
+
+@Component({
+  selector: 'app-display-results',
+  template: `
+      <div>results</div>`,
+})
+class DisplayResultsComponent {
+  @Input() fileName = 'fileName';
+  @Input() csvRecords: CSVRecord[] = csvRecordsMock;
+}
+
 describe('TemplateChooseComponent', () => {
   let component: TemplateChooseComponent;
   let fixture: ComponentFixture<TemplateChooseComponent>;
@@ -37,22 +55,4 @@ describe('TemplateChooseComponent', () => {
   });
 });
 
-const csvRecordsMock = [{
-  firstName: 'rec1',
-  lastName: 'name',
-  issueCount: '7',
-  dateOfBirth: '08/12/1989'
-}
-];
-
-
-@Component({
-  selector: 'app-display-results',
-  template: `
-      <div>results</div>`,
-})
-class DisplayResultsComponent {
-  @Input() fileName = 'fileName';
-  @Input() csvRecords: CSVRecord[] = csvRecordsMock;
-}
 

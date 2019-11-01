@@ -5,6 +5,14 @@ import { FilterPipe } from '../../pipes/filter-pipe';
 import { FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 
+const csvRecords = [{
+  firstName: 'rec1',
+  lastName: 'name',
+  issueCount: '7',
+  dateOfBirth: '08/12/1989'
+}
+];
+
 describe('DisplayResultsComponent', () => {
   let component: DisplayResultsComponent;
   let fixture: ComponentFixture<DisplayResultsComponent>;
@@ -39,10 +47,4 @@ describe('DisplayResultsComponent', () => {
 });
 
 
-const csvRecords = [{
-  firstName: 'rec1',
-  lastName: 'name',
-  issueCount: '7',
-  dateOfBirth: '08/12/1989'
-}
-];
+
